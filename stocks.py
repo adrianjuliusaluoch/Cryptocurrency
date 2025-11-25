@@ -44,14 +44,18 @@ df = pd.DataFrame(worksheet.get('A2:Z41'), columns=worksheet.row_values(1))
 # Original Data
 data = df.copy()
 
-data.columns = (
-    data.columns
-    .str.strip()
-    .str.lower()
-    .str.replace(" ", "_")                 # space → _
-    .str.replace(r"\.", "_")               # dot → _
-    .str.replace(r"[^0-9a-zA-Z_%_]", "", regex=True)  # keep %, _, letters, numbers
-)
+# Rename Variables
+data.columns = [
+    "timestamp",
+    "name",
+    "last",
+    "high",
+    "low",
+    "chg_",
+    "chg_%",
+    "vol_",
+    "time"
+]
 
 # Standardize Column Names
 data.columns = data.columns.str.lower().str.replace(' ', '_').str.replace(r'[()]', '', regex=True)
