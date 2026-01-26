@@ -10,6 +10,14 @@ from datetime import datetime, timedelta, timezone
 from google.cloud import bigquery
 from google.oauth2.service_account import Credentials
 
+# Get Date
+now = datetime.now()
+year = now.year
+month = now.strftime("%b").lower()  # jan, feb, mar
+
+table_suffix = f"{year}_{month}"
+table_suffix
+
 # Initialize BigQuery client
 client = bigquery.Client()
 
@@ -199,3 +207,4 @@ print(f"Data {data.shape} has been successfully retrieved, saved, and appended t
 
 # Exit 
 print(f'Cryptocurrency Data Export to Google BigQuery Successful')
+
