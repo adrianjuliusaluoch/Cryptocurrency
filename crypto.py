@@ -76,10 +76,10 @@ def fetch_crypto_data():
 
 # Example usage
 if __name__ == "__main__":
-    data = fetch_crypto_data()
+    bigdata = fetch_crypto_data()
 
 # Standardize Data Types
-data['price_usd'] = data['price_usd'].astype(str)
+bigdata['price_usd'] = bigdata['price_usd'].astype(str)
 
 # Define Table ID
 table_id = f"data-storage-485106.investing.crypto_{table_suffix}"
@@ -207,4 +207,5 @@ print(f"Data {data.shape} has been successfully retrieved, saved, and appended t
 
 # Exit 
 print(f'Cryptocurrency Data Export to Google BigQuery Successful')
+
 
