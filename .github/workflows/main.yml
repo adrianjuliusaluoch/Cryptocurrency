@@ -30,7 +30,3 @@ jobs:
       run: |
         python crypto.py
       continue-on-error: true
-
-    - name: Run stocks
-      run: |
-        python stocks.py
